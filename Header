@@ -1,0 +1,38 @@
+// Write your JS code here
+
+import {Link} from 'react-router-dom'
+
+import './index.css'
+
+const Header = () => (
+  <div className="header">
+    <ul className="nav-menu">
+      <li>
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link to="/about" className="nav-link">
+          About
+        </Link>
+      </li>
+    </ul>
+  </div>
+)
+export default Header
+
+
+/* Write your CSS code here */
+.header {
+  font-family: 'Roboto';
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.nav-link {
+  margin-right: 10px;
+}

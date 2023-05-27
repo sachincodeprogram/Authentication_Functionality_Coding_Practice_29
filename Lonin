@@ -1,6 +1,6 @@
 // Write your JS code here
-import Cookies from 'js-cookis'
-import {Redirect, withRoter} from 'react-router-dom'
+import Cookies from 'js-cookie'
+import {Redirect, withRouter} from 'react-router-dom'
 
 import './index.css'
 

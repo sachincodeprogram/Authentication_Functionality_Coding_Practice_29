@@ -14,6 +14,9 @@ const Home = () => (
   </>
 )
 export default Home
+
+
+export default Home
 /* Write your CSS code here */
 .home {
   display: flex;

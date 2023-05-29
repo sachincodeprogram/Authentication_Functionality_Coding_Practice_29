@@ -1,17 +1,22 @@
 // Write your JS code here
 import Cookies from 'js-cookie'
-import {Redirect, withRouter} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
 const Login = props => {
   const jwtToken = Cookies.get('jwt_token')
 
+  if (jwtToken !== undefined) {
+    return <Redirect to="/" />
+  }
+
   const setCookiesAndNavigateToHome = token => {
     const {history} = props
 
     Cookies.set('jwt_token', token, {
       expires: 30,
+      path: '/',
     })
     history.replace('/')
   }
@@ -30,9 +35,6 @@ const Login = props => {
       setCookiesAndNavigateToHome(data.jwt_token)
     }
   }
-  if (jwtToken !== undefined) {
-    return <Redirect to="/" />
-  }
 
   return (
     <div className="login">
@@ -44,9 +46,7 @@ const Login = props => {
   )
 }
 
-export default withRouter(Login)
-
-
+export default Login
 /* Write your CSS code here */
 .login {
   display: flex;
